@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    transition-duration: 0.3s;
+}
+  
+body {
+    max-width: 1100px;
+    margin: auto;
+    background-color: hsl(36, 100%, 99%);
+    font-family: "Roboto", sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav.open ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    width: 75vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    background-color:hsl(36, 100%, 99%);
+    padding-left: 1rem;
+}
+
+nav.open a {
+    color:hsl(240, 100%, 5%);
+}
+
+.open-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.close-menu {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    top: 30px;;
+    right:20px;
+    cursor: pointer;
+}
+
+nav.open .close-menu {
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+li a {
+    text-decoration: none;
+    color: hsl(236, 13%, 42%);
+}
+
+li a:hover {
+    color: hsl(5, 85%, 63%);
+}
+
+.hero-section {
+    margin-top: 3rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.hero-first-part img {
+    width: 750px;
+}
+
+.new-section {
+    background-color: hsl(240, 100%, 5%);
+    width: fit-content;
+    padding-inline: 1.25rem;
+}
+
+.new-section h1 {
+    font-weight: 700;
+    color: hsl(35, 77%, 62%);
+    margin-top: 1.35rem;
+    font-size: 2.2rem;
+}
+
+.new-section h2 {
+    color: hsl(36, 100%, 99%);
+    font-size: 1.25rem;
+}
+
+.new-section p {
+    color: hsl(233, 8%, 79%);
+    padding-top: 0.75rem;
+}
+
+.new-section .news {
+    padding-top: 2rem;
+}
+
+.new-section .news:not(:last-child) {
+    border-bottom: 1px solid hsla(233, 8%, 79%, 0.493);
+}
+
+.new-section .news {
+    padding-bottom: 2rem;
+}
+
+.hero-second-part {
+    display: flex;
+    margin-top: 2.25rem;
+    gap: 7rem;
+}
+
+.hero-second-part h1 {
+    color: hsl(240, 100%, 5%);
+    font-weight: 900;
+    font-size: 3.5rem;
+    max-width: 300px;
+    line-height: 1;
+}
+
+.hero-cta p {
+    color: hsl(236, 13%, 42%);
+    font-weight: 400;
+    font-size: 1rem;
+    max-width: 350px;
+    line-height: 1.5;
+}
+
+.hero-cta button {
+    text-transform: uppercase;
+    background-color: hsl(5, 85%, 63%);
+    border: none;
+    color: hsl(36, 100%, 99%);
+    font-weight: 700;
+    letter-spacing: 5px;
+    padding: 15px 25px;
+    margin-top: 1.75rem;
+}
+
+.hero-cta button:hover {
+    background-color: hsl(240, 100%, 5%);
+    color: hsl(36, 100%, 99%);
+    cursor: pointer;
+}
+
+.article-section {
+    display: flex;
+    margin-top: 5rem;
+    margin-bottom: 8rem;
+    gap: 2rem;
+}
+
+.article-section .article {
+    display: flex;
+    gap: 2rem;
+
+}
+
+.article img {
+    width: 100px;
+    height: fit-content;
+}
+
+.article .article-numbering {
+    font-size: 2rem;
+    font-weight: 900;
+    color: hsl(233, 8%, 79%);
+}
+
+.article h1 {
+    font-size: 1.1rem;
+    font-weight: 900;
+    margin-top: 0.5rem;
+}
+
+.article h1:hover {
+    color: hsl(5, 85%, 63%);
+    cursor: pointer;
+}
+
+.article p {
+    margin-top: 1rem;
+    line-height: 1.6;
+    max-width: 250px;
+    color: hsl(236, 13%, 42%);
+}
+
+
+@media screen and (min-width:375px) {
+    .hero-first-part img {
+        max-width: 100%;
+    }
+
+    body {
+        max-width: none;
+        padding: 1rem;
+    }
+
+    .hero-second-part {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-second-part h1 {
+        font-size: 3rem;
+        max-width: 400px;
+    }
+
+    .hero-section {
+        flex-direction: column;
+    }
+
+    .article-section {
+        flex-wrap: wrap;
+    }
+
+    nav {
+        margin-top: 1rem;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .open-menu {
+        display: block;
+    }
+}
+
+@media screen and (min-width:750px) {
+    .hero-second-part {
+        flex-direction: row;
+    
+    }
+
+    .hero-section {
+        align-items: center;
+}
+
+body {
+    max-width: 800px;
+}
+
+.article-section {
+    flex-wrap:nowrap;
+}
+
+.open-menu {
+display: none;
+}
+
+nav ul {
+    display: flex;
+}
+
+.hero-cta p {
+    max-width: 310px;
+
+}
+
+}
+
+@media screen and (min-width:1440px) {
+ body {
+    max-width: 1100px;
+}
+
+.hero-section {
+    flex-direction: row;
+    align-items: normal;
+}
+
+.hero-cta p {
+    max-width: 350px;
+}
+
+.hero-second-part h1 {
+    font-size: 3.5rem;
+    max-width: 300px;
+}
+
+.hero-section img {
+    max-width: none;
+}
+
+}
